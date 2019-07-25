@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FF5D88EF-74B7-4E9E-A45B-3CB36C804E92}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mashups</RootNamespace>
+    <AssemblyName>Mashups</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Auditoria\AuditGenerator.cs" />
+    <Compile Include="Auditoria\ProcedeToGesma.cs" />
+    <Compile Include="Auditoria\SimpleAuditProcessor.cs" />
+    <Compile Include="Auditoria\MultiAuditProcessor.cs" />
+    <Compile Include="BooleanControlProject.cs" />
+    <Compile Include="ControlsService\ControlDescription.cs" />
+    <Compile Include="ControlsService\ControlInformation.cs" />
+    <Compile Include="Context.cs" />
+    <Compile Include="ControlEvaluation.cs" />
+    <Compile Include="ControlProcess.cs" />
+    <Compile Include="ControlProject.cs" />
+    <Compile Include="ControlsService\ControlsService.cs" />
+    <Compile Include="ControlsService\InfoOrganizativaDescription.cs" />
+    <Compile Include="ControlsService\InfoGeograficaDescription.cs" />
+    <Compile Include="ControlsService\MashupDescription.cs" />
+    <Compile Include="ControlsService\ProcedeDescription.cs" />
+    <Compile Include="ControlsService\EvidenciaDescription.cs" />
+    <Compile Include="ControlsRegistry.cs" />
+    <Compile Include="DeprecatedControls\IControlByProject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DeprecatedControls\IControlGlobal.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IControlProject.cs" />
+    <Compile Include="IControlProcess.cs" />
+    <Compile Include="Mashups\MashupBuilder.cs" />
+    <Compile Include="Mashups\MashupContainer.cs" />
+    <Compile Include="Mashups\MashupConfiguration.cs" />
+    <Compile Include="ControlProjectEvaluation.cs" />
+    <Compile Include="IControl.cs" />
+    <Compile Include="Mashups.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ToolControlProject.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BPCMSPipes.Test\BPCMSPipes.Test.csproj">
+      <Project>{FB0A2C53-8344-4B14-A1D0-5E075A942CCF}</Project>
+      <Name>BPCMSPipes.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BPCMSPipes\BPCMSPipes.csproj">
+      <Project>{FADF3E99-1B75-410F-8529-62C63D1848D6}</Project>
+      <Name>BPCMSPipes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BPMMetamodel\BPMMetamodel.csproj">
+      <Project>{EB6F8E44-1010-4145-9095-71415C01B2CB}</Project>
+      <Name>BPMMetamodel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CatalogoProyectos\CatalogoProyectos.csproj">
+      <Project>{BE5A9FAA-7841-4FE8-A595-33A80DEABAEB}</Project>
+      <Name>CatalogoProyectos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EAApp\EAService.csproj">
+      <Project>{F3286EEF-E8EF-41B5-80C0-2124A30085F8}</Project>
+      <Name>EAService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharePointUtil\SharePointUtil.csproj">
+      <Project>{A3634345-55C6-415D-A93C-959CBBD9066E}</Project>
+      <Name>SharePointUtil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SpecificationLibrary\SpecificationLibrary.csproj">
+      <Project>{200C26CE-917F-41BE-B08D-AAE865291079}</Project>
+      <Name>SpecificationLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Styx\Styx.csproj">
+      <Project>{3949790D-8591-4101-9E4D-CE7A758E7409}</Project>
+      <Name>Styx</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

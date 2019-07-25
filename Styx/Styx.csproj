@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3949790D-8591-4101-9E4D-CE7A758E7409}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>de.ahzf.Styx</RootNamespace>
+    <AssemblyName>Styx</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <DocumentationFile>bin\Debug\Styx.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <DocumentationFile>bin\Release\Styx.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Pipes\ExtensionMethods\IOPipeExtensions.cs" />
+    <Compile Include="IEnumerableExtensions.cs" />
+    <Compile Include="Enumerators\ISingleEnumerator.cs" />
+    <Compile Include="Enumerators\IHistoryEnumerator.cs" />
+    <Compile Include="Exceptions.cs" />
+    <Compile Include="Pipes\ExtensionMethods\SplitPipeExtensions.cs" />
+    <Compile Include="Pipes\Branch\FairMergePipe.cs" />
+    <Compile Include="Pipes\Branch\CopySplitPipe.cs" />
+    <Compile Include="Pipes\Branch\ExhaustiveMergePipe.cs" />
+    <Compile Include="Pipes\AbstractComparisonFilterPipe.cs" />
+    <Compile Include="Pipes\ComparisonFilterPipes\CollectionFilterPipe.cs" />
+    <Compile Include="Pipes\AbstractSideEffectPipe.cs" />
+    <Compile Include="Pipes\AbstractMetaPipe.cs" />
+    <Compile Include="Pipes\FilterPipes\BackFilterPipe.cs" />
+    <Compile Include="Pipes\FilterPipes\FuncFilterPipe.cs" />
+    <Compile Include="Pipes\FilterPipes\UniquePathFilterPipe.cs" />
+    <Compile Include="Pipes\Interfaces\IDataSource.cs" />
+    <Compile Include="Pipes\Interfaces\IMergePipe.cs" />
+    <Compile Include="Pipes\Interfaces\IMetaPipe.cs" />
+    <Compile Include="Pipes\Interfaces\ISplitPipe.cs" />
+    <Compile Include="Pipes\Interfaces\IStyxSplitPipe.cs" />
+    <Compile Include="Pipes\IOPipes\CSV\CSV.cs" />
+    <Compile Include="Pipes\IOPipes\CSV\CSVReaderMetaPipe.cs" />
+    <Compile Include="Pipes\IOPipes\CSV\CSVReaderPipe.cs" />
+    <Compile Include="Pipes\IOPipes\ReadTextStreamPipe.cs" />
+    <Compile Include="Pipes\IOPipes\OpenStreamPipe.cs" />
+    <Compile Include="Pipes\IOPipes\Delegates.cs" />
+    <Compile Include="Pipes\IOPipes\FileFilterPipe.cs" />
+    <Compile Include="Pipes\SideeffectPipes\StdDevPipe.cs" />
+    <Compile Include="Pipes\SideeffectPipes\MinMaxPipe.cs" />
+    <Compile Include="Pipes\SimplePipes\ToLowerPipe.cs" />
+    <Compile Include="Pipes\FilterPipes\FutureFilterPipe.cs" />
+    <Compile Include="Pipes\FilterPipes\DuplicateFilterPipe.cs" />
+    <Compile Include="Pipes\ComparisonFilterPipes\ObjectFilterPipe.cs" />
+    <Compile Include="Pipes\FilterPipes\RangeFilterPipe.cs" />
+    <Compile Include="Pipes\FilterPipes\OrFilterPipe.cs" />
+    <Compile Include="Pipes\FilterPipes\RandomFilterPipe.cs" />
+    <Compile Include="Pipes\Interfaces\ComparisonFilter.cs" />
+    <Compile Include="Pipes\Interfaces\IComparisonFilterPipe.cs" />
+    <Compile Include="Pipes\AbstractPipe.cs" />
+    <Compile Include="Enumerators\SingleEnumerator.cs" />
+    <Compile Include="Enumerators\MultiEnumerator.cs" />
+    <Compile Include="Enumerators\ExpandableEnumerator.cs" />
+    <Compile Include="Pipes\FilterPipes\AndFilterPipe.cs" />
+    <Compile Include="Pipes\Interfaces\IFilterPipe.cs" />
+    <Compile Include="Pipes\SimplePipes\ToUpperPipe.cs" />
+    <Compile Include="Pipes\Interfaces\IStartPipe.cs" />
+    <Compile Include="Pipes\Interfaces\IEndPipe.cs" />
+    <Compile Include="Pipes\Interfaces\IPipe.cs" />
+    <Compile Include="PipeHelper.cs" />
+    <Compile Include="Enumerators\HistoryEnumerator.cs" />
+    <Compile Include="Pipes\Pipeline.cs" />
+    <Compile Include="Pipes\SimplePipes\IdentityPipe.cs" />
+    <Compile Include="Pipes\SideeffectPipes\AggregatorPipe.cs" />
+    <Compile Include="Pipes\SideeffectPipes\GroupCountPipe.cs" />
+    <Compile Include="Pipes\SideeffectPipes\SideEffectCapPipe.cs" />
+    <Compile Include="Pipes\Interfaces\ISideEffectPipe.cs" />
+    <Compile Include="Pipes\SideeffectPipes\CountPipe.cs" />
+    <Compile Include="Pipes\SimplePipes\ActionPipe.cs" />
+    <Compile Include="Pipes\SimplePipes\FuncPipe.cs" />
+    <Compile Include="Pipes\Branch\SplitPipe.cs" />
+    <Compile Include="Pipes\Utils\UnrollPipe.cs" />
+    <Compile Include="Pipes\Utils\HasCountPipe.cs" />
+    <Compile Include="Pipes\Utils\StartPipe.cs" />
+    <Compile Include="Pipes\Utils\ScatterPipe.cs" />
+    <Compile Include="Pipes\Utils\PathPipe.cs" />
+    <Compile Include="Pipes\Utils\GatherPipe.cs" />
+    <Compile Include="Pipes\Utils\HasNextPipe.cs" />
+    <Compile Include="Pipes\SimplePipes\CharacterCountPipe.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="Pipes\Interfaces\PipesClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+</Project>
