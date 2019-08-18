@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9C3A3335-4B6D-48AF-93CD-C61EA145A038}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>isa.MCC</RootNamespace>
+    <AssemblyName>MCC</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pipes.Generic\AbstractListDataSource.cs" />
+    <Compile Include="Pipes.Generic\AbstractMergePipe.cs" />
+    <Compile Include="Pipes.Generic\AndParameterPipe.cs" />
+    <Compile Include="Pipes.Generic\AndPipe.cs" />
+    <Compile Include="Pipes.Generic\ExistsPipe.cs" />
+    <Compile Include="Pipes.Generic\MergeProjectCompliancePipe.cs" />
+    <Compile Include="Pipes.Generic\ProjectsState.cs" />
+    <Compile Include="Pipes.Generic\Result.cs" />
+    <Compile Include="Pipes.Generic\SimpleCountPipe.cs" />
+    <Compile Include="Mashups\IMashupCaller.cs" />
+    <Compile Include="Mashups\MashupBuilder.cs" />
+    <Compile Include="Mashups\MashupConfiguration.cs" />
+    <Compile Include="Mashups\MashupContainer.cs" />
+    <Compile Include="Mashups\MashupDescription.cs" />
+    <Compile Include="Mashups\MashupElement.cs" />
+    <Compile Include="Mashups\IMashupRepository.cs" />
+    <Compile Include="Controls\ControlContextEvaluation.cs" />
+    <Compile Include="Controls\ControlResultWithContext.cs" />
+    <Compile Include="Controls\IControl.cs" />
+    <Compile Include="Controls\IControlContextEvaluation.cs" />
+    <Compile Include="Controls\IContext.cs" />
+    <Compile Include="Controls\GenericContext.cs" />
+    <Compile Include="Pipes.Generic\INamedMergePipe.cs" />
+    <Compile Include="Pipes.Generic\AbstractNamedMergePipe.cs" />
+    <Compile Include="Pipes.Generic\MergeResultWithContext.cs" />
+    <Compile Include="Controls\ControlInformation.cs" />
+    <Compile Include="Controls\RuleInformation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Styx\Styx.csproj">
+      <Project>{3949790D-8591-4101-9E4D-CE7A758E7409}</Project>
+      <Name>Styx</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pipes.Generic\" />
+    <Folder Include="Mashups\" />
+    <Folder Include="Controls\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
